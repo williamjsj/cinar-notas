@@ -123,115 +123,660 @@
   <script>
     // DATOS DE TUS ESTUDIANTES (ACTUALIZADOS)
     const students = [
-      { cedula: "1037658973", nombre: "Agudelo Sisquiarco Daniel", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1037658973", nombre: "Agudelo Sisquiarco Daniel", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1037658973", nombre: "Agudelo Sisquiarco Daniel", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1141316368", nombre: "Anzola Quiroz Juan Sebastian", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1141316368", nombre: "Anzola Quiroz Juan Sebastian", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1141316368", nombre: "Anzola Quiroz Juan Sebastian", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1020800564", nombre: "Bastidas Franco Jessica Alejandra", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1020800564", nombre: "Bastidas Franco Jessica Alejandra", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1085320953", nombre: "Bolaños Insuasty Tania Yazmin", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1085320953", nombre: "Bolaños Insuasty Tania Yazmin", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "36950445", nombre: "Botina Martinez Margareth", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "36950445", nombre: "Botina Martinez Margareth", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "36950445", nombre: "Botina Martinez Margareth", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1083752862", nombre: "Burbano Andrea Alexandra", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1083752862", nombre: "Burbano Andrea Alexandra", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1083752862", nombre: "Burbano Andrea Alexandra", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1085331040", nombre: "Cabrera Benavides Brisdanny Sujey", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1085331040", nombre: "Cabrera Benavides Brisdanny Sujey", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1004214911", nombre: "Cabrera Mena Manuela", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1004214911", nombre: "Cabrera Mena Manuela", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1004214911", nombre: "Cabrera Mena Manuela", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1085304874", nombre: "Cadena Maigual Monica Isabel", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1085304874", nombre: "Cadena Maigual Monica Isabel", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "36759562", nombre: "Calderon Gutierres Johana", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "36759562", nombre: "Calderon Gutierres Johana", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "36759562", nombre: "Calderon Gutierres Johana", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "59312718", nombre: "Calvache Insuasty Miryam Andrea", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "59312718", nombre: "Calvache Insuasty Miryam Andrea", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "59312718", nombre: "Calvache Insuasty Miryam Andrea", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1233191024", nombre: "Cuastumal Portilla Diana Mireya", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1233191024", nombre: "Cuastumal Portilla Diana Mireya", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1233191024", nombre: "Cuastumal Portilla Diana Mireya", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1085314941", nombre: "Dulcey Martinez Maria Fernanda", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1085314941", nombre: "Dulcey Martinez Maria Fernanda", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1004576880", nombre: "Estacio Miramá Nayelly Katherin", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1004576880", nombre: "Estacio Miramá Nayelly Katherin", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1004235310", nombre: "Fraga Ortega Karen Vanessa", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1004235310", nombre: "Fraga Ortega Karen Vanessa", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1004235310", nombre: "Fraga Ortega Karen Vanessa", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1233190066", nombre: "Gomez Risueño Leidy Alejandra", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1233190066", nombre: "Gomez Risueño Leidy Alejandra", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1233190066", nombre: "Gomez Risueño Leidy Alejandra", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1041086643", nombre: "Gongora Antony", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1041086643", nombre: "Gongora Antony", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1080041393", nombre: "Guachavez Perez William Henry", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1080041393", nombre: "Guachavez Perez William Henry", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1080041393", nombre: "Guachavez Perez William Henry", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1085292419", nombre: "Maigual Cabrera Deibi Richard", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1085292419", nombre: "Maigual Cabrera Deibi Richard", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1085292419", nombre: "Maigual Cabrera Deibi Richard", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "59829175", nombre: "Martinez Muñoz Dexi Ada", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "59829175", nombre: "Martinez Muñoz Dexi Ada", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "59829175", nombre: "Martinez Muñoz Dexi Ada", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1233191632", nombre: "Martinez Muñoz Lizethe Vanessa", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1233191632", nombre: "Martinez Muñoz Lizethe Vanessa", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1193525468", nombre: "Martos Erazo Lady Carolina", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1193525468", nombre: "Martos Erazo Lady Carolina", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1193525468", nombre: "Martos Erazo Lady Carolina", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1085303260", nombre: "Monatanchez Asprilla Edwin Alexander", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1085303260", nombre: "Monatanchez Asprilla Edwin Alexander", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1085303260", nombre: "Monatanchez Asprilla Edwin Alexander", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1004134082", nombre: "Muñoz Rosero Sebastian", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1085301782", nombre: "Naspiran Muñoz Paola Andrea", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1085301782", nombre: "Naspiran Muñoz Paola Andrea", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1085301782", nombre: "Naspiran Muñoz Paola Andrea", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1085334538", nombre: "Ortega Ruales Fabio Jhon", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1085334538", nombre: "Ortega Ruales Fabio Jhon", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1085262183", nombre: "Rivera Espinosa Dary Marcela", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1085262183", nombre: "Rivera Espinosa Dary Marcela", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1085262183", nombre: "Rivera Espinosa Dary Marcela", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "27090907", nombre: "Salazar Benavides Rosa Amalia", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1085341440", nombre: "Trejo Guerra Jose Jimmy", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1085341440", nombre: "Trejo Guerra Jose Jimmy", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1078371101", nombre: "Yanguatin M Edisson Orlando", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1078371101", nombre: "Yanguatin M Edisson Orlando", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1078371101", nombre: "Yanguatin M Edisson Orlando", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 },
-
-      { cedula: "1085325718", nombre: "Zarama Silva Juan Fernando", asignatura: "Gestión Empresarial", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1085325718", nombre: "Zarama Silva Juan Fernando", asignatura: "Mercadeo", parcial: 1, final: 1, definitiva: 1 },
-      { cedula: "1085325718", nombre: "Zarama Silva Juan Fernando", asignatura: "Proc. De Información", parcial: 1, final: 1, definitiva: 1 }
+      { cedula: "1037658973",
+    nombre: "AGUDELO SISQUIARCO DANIEL",
+    asignatura: "Gestion Empresarial",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1037658973",
+    nombre: "AGUDELO SISQUIARCO DANIEL",
+    asignatura: "Gestion Empresarial",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1037658973",
+    nombre: "AGUDELO SISQUIARCO DANIEL",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1037658973",
+    nombre: "AGUDELO SISQUIARCO DANIEL",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 5,
+    final: 3.9,
+    definitiva: 4.34
+  },
+  {
+    cedula: "1141316368",
+    nombre: "ANZOLA QUIROZ JUAN SEBASTIAN",
+    asignatura: "Gestion Empresarial",
+    parcial: 4.8,
+    final: 5,
+    definitiva: 4.92
+  },
+  {
+    cedula: "1141316368",
+    nombre: "ANZOLA QUIROZ JUAN SEBASTIAN",
+    asignatura: "Mercadeo",
+    parcial: 4.8,
+    final: 5,
+    definitiva: 4.92
+  },
+  {
+    cedula: "1141316368",
+    nombre: "ANZOLA QUIROZ JUAN SEBASTIAN",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 4.9,
+    final: 3.9,
+    definitiva: 4.3
+  },
+  {
+    cedula: "1020800564",
+    nombre: "BASTIDAS FRANCO JESSICA ALEJANDRA",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1020800564",
+    nombre: "BASTIDAS FRANCO JESSICA ALEJANDRA",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 5,
+    final: 4.3,
+    definitiva: 4.58
+  },
+  {
+    cedula: "1085320953",
+    nombre: "BOLAÑOS INSUASTY TANIA YAZMIN",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1085320953",
+    nombre: "BOLAÑOS INSUASTY TANIA YAZMIN",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 4.8,
+    final: 4.5,
+    definitiva: 4.62
+  },
+  {
+    cedula: "36950445",
+    nombre: "BOTINA  MARTINEZ VICKY MARGARETH CRISTINA",
+    asignatura: "Gestion Empresarial",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "36950445",
+    nombre: "BOTINA  MARTINEZ VICKY MARGARETH CRISTINA",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "36950445",
+    nombre: "BOTINA  MARTINEZ VICKY MARGARETH CRISTINA",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 5,
+    final: 4.5,
+    definitiva: 4.7
+  },
+  {
+    cedula: "1083752862",
+    nombre: "BURBANO ROSERO ANDREA ALEXANDRA",
+    asignatura: "Gestion Empresarial",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1083752862",
+    nombre: "BURBANO ROSERO ANDREA ALEXANDRA",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 4.8,
+    definitiva: 4.88
+  },
+  {
+    cedula: "1083752862",
+    nombre: "BURBANO ROSERO ANDREA ALEXANDRA",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 5,
+    final: 4.5,
+    definitiva: 4.7
+  },
+  {
+    cedula: "1085331040",
+    nombre: "CABRERA BENAVIDES BRISDANNY SUJEY",
+    asignatura: "Mercadeo",
+    parcial: 4.8,
+    final: 5,
+    definitiva: 4.92
+  },
+  {
+    cedula: "1085331040",
+    nombre: "CABRERA BENAVIDES BRISDANNY SUJEY",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 5,
+    final: 4.3,
+    definitiva: 4.58
+  },
+  {
+    cedula: "1004214911",
+    nombre: "CABRERA MENA SHAMADY MANUELA",
+    asignatura: "Gestion Empresarial",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1004214911",
+    nombre: "CABRERA MENA SHAMADY MANUELA",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1004214911",
+    nombre: "CABRERA MENA SHAMADY MANUELA",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 5,
+    final: 4.5,
+    definitiva: 4.7
+  },
+  {
+    cedula: "1085304874",
+    nombre: "CADENA MAIGUAL MONICA ISABEL",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1085304874",
+    nombre: "CADENA MAIGUAL MONICA ISABEL",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 4.8,
+    final: 4.5,
+    definitiva: 4.62
+  },
+  {
+    cedula: "36759562",
+    nombre: "CALDERON GUTIERREZ JOHANNA",
+    asignatura: "Gestion Empresarial",
+    parcial: 4.8,
+    final: 3,
+    definitiva: 3.72
+  },
+  {
+    cedula: "36759562",
+    nombre: "CALDERON GUTIERREZ JOHANNA",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "36759562",
+    nombre: "CALDERON GUTIERREZ JOHANNA",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 4.3,
+    final: 4.5,
+    definitiva: 4.42
+  },
+  {
+    cedula: "59312718",
+    nombre: "CALVACHE INSUASTY MIRYAM ANDREA",
+    asignatura: "Gestion Empresarial",
+    parcial: 5,
+    final: 4.8,
+    definitiva: 4.88
+  },
+  {
+    cedula: "59312718",
+    nombre: "CALVACHE INSUASTY MIRYAM ANDREA",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "59312718",
+    nombre: "CALVACHE INSUASTY MIRYAM ANDREA",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 4.6,
+    final: 4.5,
+    definitiva: 4.54
+  },
+  {
+    cedula: "1233191024",
+    nombre: "CUASTUMAL PORTILLA JENNY MIREYA",
+    asignatura: "Gestion Empresarial",
+    parcial: 4.8,
+    final: 4.8,
+    definitiva: 4.8
+  },
+  {
+    cedula: "1233191024",
+    nombre: "CUASTUMAL PORTILLA JENNY MIREYA",
+    asignatura: "Mercadeo",
+    parcial: 0,
+    final: null,
+    definitiva: null
+  },
+  {
+    cedula: "1233191024",
+    nombre: "CUASTUMAL PORTILLA JENNY MIREYA",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 5,
+    final: 3.9,
+    definitiva: 4.34
+  },
+  {
+    cedula: "1085314941",
+    nombre: "DULCEY MARTINEZ MARIA FERNANDA",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1085314941",
+    nombre: "DULCEY MARTINEZ MARIA FERNANDA",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 5,
+    final: 4.3,
+    definitiva: 4.58
+  },
+  {
+    cedula: "1004576880",
+    nombre: "ESTACIO MIRAMA NAYELLY KATHERIN",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 4.8,
+    definitiva: 4.88
+  },
+  {
+    cedula: "1004576880",
+    nombre: "ESTACIO MIRAMA NAYELLY KATHERIN",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 5,
+    final: 4.5,
+    definitiva: 4.7
+  },
+  {
+    cedula: "1004235310",
+    nombre: "FRAGA ORTEGA KAREN VANESSA",
+    asignatura: "Gestion Empresarial",
+    parcial: 4.8,
+    final: 4.8,
+    definitiva: 4.8
+  },
+  {
+    cedula: "1004235310",
+    nombre: "FRAGA ORTEGA KAREN VANESSA",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1004235310",
+    nombre: "FRAGA ORTEGA KAREN VANESSA",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 5,
+    final: 4.5,
+    definitiva: 4.7
+  },
+  {
+    cedula: "1233190066",
+    nombre: "GOMEZ RISUEÑO LEIDY ALEJANDRA",
+    asignatura: "Gestion Empresarial",
+    parcial: 4.8,
+    final: 4.8,
+    definitiva: 4.8
+  },
+  {
+    cedula: "1233190066",
+    nombre: "GOMEZ RISUEÑO LEIDY ALEJANDRA",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1233190066",
+    nombre: "GOMEZ RISUEÑO LEIDY ALEJANDRA",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 5,
+    final: 4.5,
+    definitiva: 4.7
+  },
+  {
+    cedula: "1041086643",
+    nombre: "GONGORA AVILES ANTONY",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1041086643",
+    nombre: "GONGORA AVILES ANTONY",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 4.7,
+    final: 4.3,
+    definitiva: 4.46
+  },
+  {
+    cedula: "1080041393",
+    nombre: "GUACHAVEZ PEREZ WILLIAM HENRY",
+    asignatura: "Gestion Empresarial",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1080041393",
+    nombre: "GUACHAVEZ PEREZ WILLIAM HENRY",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1080041393",
+    nombre: "GUACHAVEZ PEREZ WILLIAM HENRY",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 4.8,
+    final: 4.5,
+    definitiva: 4.62
+  },
+  {
+    cedula: "1085292419",
+    nombre: "MAIGUAL CABRERA DEIBY RICHAR",
+    asignatura: "Gestion Empresarial",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1085292419",
+    nombre: "MAIGUAL CABRERA DEIBY RICHAR",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1085292419",
+    nombre: "MAIGUAL CABRERA DEIBY RICHAR",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 4.9,
+    final: 4.5,
+    definitiva: 4.66
+  },
+  {
+    cedula: "59829175",
+    nombre: "MARTINEZ MUÑOZ DEXI ADA",
+    asignatura: "Gestion Empresarial",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "59829175",
+    nombre: "MARTINEZ MUÑOZ DEXI ADA",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "59829175",
+    nombre: "MARTINEZ MUÑOZ DEXI ADA",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 4.3,
+    final: 3.5,
+    definitiva: 3.82
+  },
+  {
+    cedula: "1233191632",
+    nombre: "MARTINEZ MUÑOZ LIZETH  VANESSA",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1233191632",
+    nombre: "MARTINEZ MUÑOZ LIZETH  VANESSA",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1193523468",
+    nombre: "MARTOS ERAZO  LADY CAROLINA",
+    asignatura: "Gestion Empresarial",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1193523468",
+    nombre: "MARTOS ERAZO  LADY CAROLINA",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1193523468",
+    nombre: "MARTOS ERAZO  LADY CAROLINA",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 5,
+    final: 4.5,
+    definitiva: 4.7
+  },
+  {
+    cedula: "1085303260",
+    nombre: "MONTANCHEZ ASPRIELLA EDWIN ALEXANDER",
+    asignatura: "Gestion Empresarial",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1085303260",
+    nombre: "MONTANCHEZ ASPRIELLA EDWIN ALEXANDER",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1085303260",
+    nombre: "MONTANCHEZ ASPRIELLA EDWIN ALEXANDER",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 4.8,
+    final: 3.5,
+    definitiva: 4.02
+  },
+  {
+    cedula: "1004134082",
+    nombre: "MUÑOZ ROSERO JESUS SEBASTIAN",
+    asignatura: "Gestion Empresarial",
+    parcial: 5,
+    final: 4.8,
+    definitiva: 4.88
+  },
+  {
+    cedula: "1004134082",
+    nombre: "MUÑOZ ROSERO JESUS SEBASTIAN",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1004134082",
+    nombre: "MUÑOZ ROSERO JESUS SEBASTIAN",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 3.7,
+    final: 4.5,
+    definitiva: 4.18
+  },
+  {
+    cedula: "1085301782",
+    nombre: "NASPIRAN MUÑOZ PAOLA ANDREA",
+    asignatura: "Gestion Empresarial",
+    parcial: 0,
+    final: null,
+    definitiva: null
+  },
+  {
+    cedula: "1085301782",
+    nombre: "NASPIRAN MUÑOZ PAOLA ANDREA",
+    asignatura: "Mercadeo",
+    parcial: 0,
+    final: null,
+    definitiva: null
+  },
+  {
+    cedula: "1085301782",
+    nombre: "NASPIRAN MUÑOZ PAOLA ANDREA",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 0,
+    final: null,
+    definitiva: null
+  },
+  {
+    cedula: "1085334538",
+    nombre: "ORTEGA RUALES FABIO JHON",
+    asignatura: "Mercadeo",
+    parcial: 4.8,
+    final: 1.92,
+    definitiva: null
+  },
+  {
+    cedula: "1085334538",
+    nombre: "ORTEGA RUALES FABIO JHON",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 4.8,
+    final: 1.92,
+    definitiva: null
+  },
+  {
+    cedula: "1085262183",
+    nombre: "RIVERA ESPINOZA DARY MARCELA",
+    asignatura: "Gestion Empresarial",
+    parcial: 4.8,
+    final: 4.8,
+    definitiva: 4.8
+  },
+  {
+    cedula: "1085262183",
+    nombre: "RIVERA ESPINOZA DARY MARCELA",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 4.8,
+    definitiva: 4.88
+  },
+  {
+    cedula: "1085262183",
+    nombre: "RIVERA ESPINOZA DARY MARCELA",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 4.6,
+    final: 4.5,
+    definitiva: 4.54
+  },
+  {
+    cedula: "27090907",
+    nombre: "SALAZAR BENAVIDES ROSA AMALIA",
+    asignatura: "Mercadeo",
+    parcial: 4.8,
+    final: 4.8,
+    definitiva: 4.8
+  },
+  {
+    cedula: "1085341440",
+    nombre: "TREJO GUERRA JOSE JIMMY",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1085341440",
+    nombre: "TREJO GUERRA JOSE JIMMY",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1078371101",
+    nombre: "YANGUATIN MENESES EDISSON ORLANDO",
+    asignatura: "Gestion Empresarial",
+    parcial: 5,
+    final: 5,
+    definitiva: 5
+  },
+  {
+    cedula: "1078371101",
+    nombre: "YANGUATIN MENESES EDISSON ORLANDO",
+    asignatura: "Mercadeo",
+    parcial: 5,
+    final: 4.8,
+    definitiva: 4.88
+  },
+  {
+    cedula: "1078371101",
+    nombre: "YANGUATIN MENESES EDISSON ORLANDO",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 4.9,
+    final: 3.9,
+    definitiva: 4.3
+  },
+  {
+    cedula: "1085325718",
+    nombre: "ZARAMA SILVA JUAN FERNANDO",
+    asignatura: "Gestion Empresarial",
+    parcial: 5,
+    final: 4.8,
+    definitiva: 4.88
+  },
+  {
+    cedula: "1085325718",
+    nombre: "ZARAMA SILVA JUAN FERNANDO",
+    asignatura: "Mercadeo",
+    parcial: 4.8,
+    final: 4.8,
+    definitiva: 4.8
+  },
+  {
+    cedula: "1085325718",
+    nombre: "ZARAMA SILVA JUAN FERNANDO",
+    asignatura: "Procesamiento de Informacion",
+    parcial: 3.7,
+    final: 4.3,
+    definitiva: 4.06 }
     ];
 
     // Buscar por cédula
@@ -347,4 +892,5 @@
     document.addEventListener('selectstart', e => e.preventDefault());
   </script>
 </body>
+
 </html>

@@ -10,6 +10,7 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
+      user-select: none;
     }
     #results {
       max-height: 60vh;
@@ -24,9 +25,6 @@
     ::-webkit-scrollbar-thumb {
       background: #0d47a1;
       border-radius: 3px;
-    }
-    body {
-      user-select: none;
     }
     #teacher-view {
       display: none;
@@ -53,7 +51,7 @@
       <h1 class="logo-text">CINAR SISTEMAS</h1>
       <p class="text-sm text-gray-700 mt-1">Docente: Esp. William Salazar Jurado</p>
       <p class="text-lg font-semibold text-blue-800 mt-3">Consulta de Notas</p>
-      <p class="text-xs text-gray-600">Periodo Académico: <strong>2025C</strong></p>
+      <p class="text-xs text-gray-600">Periodo Académico: <strong>2026B</strong></p>
     </div>
 
     <!-- Mensaje de advertencia -->
@@ -102,7 +100,7 @@
       <div id="all-students" class="mt-4 space-y-3 max-h-96 overflow-y-auto text-sm"></div>
     </div>
 
-    <!-- Pie de página actualizado con enlace funcional -->
+    <!-- Pie de página -->
     <div class="text-center mt-8 pt-4 border-t border-gray-200">
       <p class="text-xs text-gray-500 leading-tight mb-2">
         <strong>Sitio provisional.</strong><br>
@@ -115,455 +113,395 @@
       >
         Formulario de certificado de calificaciones
       </a>
-      <p class="text-xs text-gray-400 mt-3">&copy; 2025 - Todos los derechos reservados</p>
+      <p class="text-xs text-gray-400 mt-3">&copy; 2026 - Todos los derechos reservados</p>
     </div>
 
   </div>
 
   <script>
-    // DATOS DE TUS ESTUDIANTES (ACTUALIZADOS)
+    // DATOS DE ESTUDIANTES
     const students = [
-  {
-    cedula: "1114825473",
-    nombre: "Aida Magaly Cruz Narvaez",
-    asignatura: "Gestion Empresarial",
-    parcial: 5,
-    final: 0,
-    definitiva: 0
-  },
-  {
-    cedula: "1193201531",
-    nombre: "Alex Camilo Matabanchoy Cuaran",
-    asignatura: "Servicio Al Cliente",
-    parcial: 4.8,
-    final: 3,
-    definitiva: 3.72
-  },
-  {
-    cedula: "1083752862",
-    nombre: "Andrea Alexandra Burbano Rosero",
-    asignatura: "Matematica Financiera",
-    parcial: 4.3,
-    final: 4.3,
-    definitiva: 4.3
-  },
-  {
-    cedula: "1193469738",
-    nombre: "Andres Felipe Cruz Ruiz",
-    asignatura: "Servicio Al Cliente",
-    parcial: 5,
-    final: 0,
-    definitiva: 2
-  },
-  {
-    cedula: "1004410605",
-    nombre: "Brayan Francisco Maigual Fuelagan",
-    asignatura: "Gestion Empresarial",
-    parcial: 5,
-    final: 0,
-    definitiva: 0
-  },
-  {
-    cedula: "1085337979",
-    nombre: "Carlos Ferney Tarapuez Guerrero",
-    asignatura: "Servicio Al Cliente",
-    parcial: 0,
-    final: 0,
-    definitiva: 0
-  },
-  {
-    cedula: "1085293512",
-    nombre: "Carol Stefanny Quiñones Montenegro",
-    asignatura: "Gestion Empresarial",
-    parcial: 5,
-    final: 0,
-    definitiva: 0
-  },
-  {
-    cedula: "1007706071",
-    nombre: "Cristhian David Delgado Tulcan",
-    asignatura: "Gestion Empresarial",
-    parcial: 0,
-    final: 0,
-    definitiva: 0
-  },
-  {
-    cedula: "1037658973",
-    nombre: "Daniel  Agudelo Sisquiarco",
-    asignatura: "Matematica Financiera",
-    parcial: 0,
-    final: 0,
-    definitiva: 0
-  },
-  {
-    cedula: "1085340975",
-    nombre: "Daniel Esteban Martinez Melo",
-    asignatura: "Gestion Empresarial",
-    parcial: 0,
-    final: 0,
-    definitiva: 0
-  },
-  {
-    cedula: "1085262183",
-    nombre: "Dary Marcela Rivera Espinoza",
-    asignatura: "Matematica Financiera",
-    parcial: 4.3,
-    final: 4.3,
-    definitiva: 4.3
-  },
-  {
-    cedula: "1081275938",
-    nombre: "Dayana Marcela Montanchez Buesaquillo",
-    asignatura: "Gestion Empresarial",
-    parcial: 5,
-    final: 0,
-    definitiva: 0
-  },
-  {
-    cedula: "1085292419",
-    nombre: "Deiby Richar Maigual Cabrera",
-    asignatura: "Matematica Financiera",
-    parcial: 5,
-    final: 0,
-    definitiva: 2
-  },
-  {
-    cedula: "59829175",
-    nombre: "Dexi Ada Martinez Muñoz",
-    asignatura: "Matematica Financiera",
-    parcial: 4.1,
-    final: 4.5,
-    definitiva: 4.34
-  },
-  {
-    cedula: "1085315854",
-    nombre: "Driana Eliceth Toro Arteaga",
-    asignatura: "Servicio Al Cliente",
-    parcial: 5,
-    final: 5,
-    definitiva: 5
-  },
-  {
-    cedula: "1078371101",
-    nombre: "Edisson Orlando Yanguatin Meneses",
-    asignatura: "Matematica Financiera",
-    parcial: 4.8,
-    final: 5,
-    definitiva: 4.92
-  },
-  {
-    cedula: "1085303260",
-    nombre: "Edwin Alexander Montanchez Aspriella",
-    asignatura: "Matematica Financiera",
-    parcial: 4.5,
-    final: 0,
-    definitiva: 1.8
-  },
-  {
-    cedula: "1193032997",
-    nombre: "Gabriela Stephania Martinez Samaniego",
-    asignatura: "Gestion Empresarial",
-    parcial: 5,
-    final: 0,
-    definitiva: 0
-  },
-  {
-    cedula: "1004508686",
-    nombre: "Javier Alveiro Usama Chicaiza",
-    asignatura: "Servicio Al Cliente",
-    parcial: 4.6,
-    final: 4.8,
-    definitiva: 4.72
-  },
-  {
-    cedula: "1004217118",
-    nombre: "Jedy Georgett Perez Pantoja",
-    asignatura: "Gestion Empresarial",
-    parcial: 4.5,
-    final: 0,
-    definitiva: 0
-  },
-  {
-    cedula: "1020800564",
-    nombre: "Jessica Alejandra Bastidas Franco",
-    asignatura: "Servicio Al Cliente",
-    parcial: 5,
-    final: 5,
-    definitiva: 5
-  },
-  {
-    cedula: "1004134082",
-    nombre: "Jesus Sebastian Muñoz Rosero",
-    asignatura: "Matematica Financiera",
-    parcial: 4.5,
-    final: 4.3,
-    definitiva: 4.38
-  },
-  {
-    cedula: "1004233787",
-    nombre: "Johan Sebastian Rosero  Rodriguez",
-    asignatura: "Servicio Al Cliente",
-    parcial: 4.8,
-    final: 4.8,
-    definitiva: 4.8
-  },
-  {
-    cedula: "36759562",
-    nombre: "Johanna Calderon Gutierrez",
-    asignatura: "Matematica Financiera",
-    parcial: 0,
-    final: 0,
-    definitiva: 0
-  },
-  {
-    cedula: "1084220197",
-    nombre: "Jonathan Oswaldo Sacanambuy Imbajoa",
-    asignatura: "Gestion Empresarial",
-    parcial: 4.6,
-    final: 0,
-    definitiva: 0
-  },
-  {
-    cedula: "5207953",
-    nombre: "Jonathan Spencer Figueroa Clark",
-    asignatura: "Servicio Al Cliente",
-    parcial: 4.8,
-    final: 4.6,
-    definitiva: 4.68
-  },
-  {
-    cedula: "1141316368",
-    nombre: "Juan Sebastian Anzola Quiroz",
-    asignatura: "Matematica Financiera",
-    parcial: 4.5,
-    final: 5,
-    definitiva: 4.8
-  },
-  {
-    cedula: "1233189205",
-    nombre: "Karen Vanessa Arroyo Montenegro",
-    asignatura: "Servicio Al Cliente",
-    parcial: 5,
-    final: 0,
-    definitiva: 2
-  },
-  {
-    cedula: "1004235310",
-    nombre: "Karen Vanessa Fraga Ortega",
-    asignatura: "Matematica Financiera",
-    parcial: 5,
-    final: 5,
-    definitiva: 5
-  },
-  {
-    cedula: "1004597878",
-    nombre: "Katherine Eliana Rodriguez Alvarez",
-    asignatura: "Servicio Al Cliente",
-    parcial: 5,
-    final: 5,
-    definitiva: 5
-  },
-  {
-    cedula: "1193523468",
-    nombre: "Lady Carolina Martos Erazo",
-    asignatura: "Matematica Financiera",
-    parcial: 4.8,
-    final: 5,
-    definitiva: 4.92
-  },
-  {
-    cedula: "1088830723",
-    nombre: "Laura Caicedo Ramirez",
-    asignatura: "Servicio Al Cliente",
-    parcial: 5,
-    final: 5,
-    definitiva: 5
-  },
-  {
-    cedula: "1233190066",
-    nombre: "Leidy Alejandra Gomez Risueño",
-    asignatura: "Matematica Financiera",
-    parcial: 5,
-    final: 5,
-    definitiva: 5
-  },
-  {
-    cedula: "1085338751",
-    nombre: "Leidy Geovanna Escobar Orbes",
-    asignatura: "Gestion Empresarial",
-    parcial: 5,
-    final: 0,
-    definitiva: 0
-  },
-  {
-    cedula: "1233191632",
-    nombre: "Lizeth  Vanessa Martinez Muñoz",
-    asignatura: "Servicio Al Cliente",
-    parcial: 4.8,
-    final: 0,
-    definitiva: 1.92
-  },
-  {
-    cedula: "1085309349",
-    nombre: "Luz Dary Pinchao Paz",
-    asignatura: "Gestion Empresarial",
-    parcial: 5,
-    final: 0,
-    definitiva: 0
-  },
-  {
-    cedula: "1085274065",
-    nombre: "Margoth Viviana Ascuntar Chachinoy",
-    asignatura: "Gestion Empresarial",
-    parcial: 5,
-    final: 0,
-    definitiva: 0
-  },
-  {
-    cedula: "1193217556",
-    nombre: "Maria  Paula Marin Eslava",
-    asignatura: "Servicio Al Cliente",
-    parcial: 5,
-    final: 0,
-    definitiva: 2
-  },
-  {
-    cedula: "1085919275",
-    nombre: "Maria Camila Chacon Bolanos",
-    asignatura: "Gestion Empresarial",
-    parcial: 5,
-    final: 0,
-    definitiva: 0
-  },
-  {
-    cedula: "1085314941",
-    nombre: "Maria Fernanda Dulcey Martinez",
-    asignatura: "Servicio Al Cliente",
-    parcial: 5,
-    final: 5,
-    definitiva: 5
-  },
-  {
-    cedula: "1085280191",
-    nombre: "Marly Jennifer Chaves Granja",
-    asignatura: "Gestion Empresarial",
-    parcial: 5,
-    final: 0,
-    definitiva: 0
-  },
-  {
-    cedula: "1080040175",
-    nombre: "Maryorie Vanessa Narvaez Medina",
-    asignatura: "Servicio Al Cliente",
-    parcial: 4.8,
-    final: 4.8,
-    definitiva: 4.8
-  },
-  {
-    cedula: "59312718",
-    nombre: "Miryam Andrea  Calvache Insuasty",
-    asignatura: "Matematica Financiera",
-    parcial: 4.1,
-    final: 4.5,
-    definitiva: 4.34
-  },
-  {
-    cedula: "1085304874",
-    nombre: "Monica Isabel Cadena Maigual",
-    asignatura: "Servicio Al Cliente",
-    parcial: 5,
-    final: 5,
-    definitiva: 5
-  },
-  {
-    cedula: "37087135",
-    nombre: "Nathaly Adriana Martinez Zambrano",
-    asignatura: "Servicio Al Cliente",
-    parcial: 5,
-    final: 5,
-    definitiva: 5
-  },
-  {
-    cedula: "59830176",
-    nombre: "Sandra Jackeline Guerrero Leyton",
-    asignatura: "Servicio Al Cliente",
-    parcial: 5,
-    final: 0,
-    definitiva: 2
-  },
-  {
-    cedula: "1087200494",
-    nombre: "Sandra Patricia Angulo Caicedo",
-    asignatura: "Matematica Financiera",
-    parcial: 5,
-    final: 5,
-    definitiva: 5
-  },
-  {
-    cedula: "1087200494",
-    nombre: "Sandra Patricia Angulo Caicedo",
-    asignatura: "Servicio Al Cliente",
-    parcial: 5,
-    final: 5,
-    definitiva: 5
-  },
-  {
-    cedula: "1004214911",
-    nombre: "Shamady Manuela Cabrera Mena",
-    asignatura: "Matematica Financiera",
-    parcial: 4.8,
-    final: 5,
-    definitiva: 4.92
-  },
-  {
-    cedula: "8151333",
-    nombre: "Sofia Valentina Gomez Useche",
-    asignatura: "Gestion Empresarial",
-    parcial: 4.5,
-    final: 0,
-    definitiva: 0
-  },
-  {
-    cedula: "1086359663",
-    nombre: "Sonia Carolina  Erazo Lucena",
-    asignatura: "Matematica Financiera",
-    parcial: 5,
-    final: 5,
-    definitiva: 5
-  },
-  {
-    cedula: "1085320953",
-    nombre: "Tania Yazmin Bolaños Insuasty",
-    asignatura: "Servicio Al Cliente",
-    parcial: 5,
-    final: 5,
-    definitiva: 5
-  },
-  {
-    cedula: "1080041393",
-    nombre: "William Henry  Guachavez Perez",
-    asignatura: "Matematica Financiera",
-    parcial: 5,
-    final: 5,
-    definitiva: 5
-  },
-  {
-    cedula: "1004192427",
-    nombre: "Wilmer Andres Piscal Chagueza",
-    asignatura: "Servicio Al Cliente",
-    parcial: 5,
-    final: 5,
-    definitiva: 5
-  },
-  {
-    cedula: "36756845",
-    nombre: "Ximena De Jesus Rodriguez Ceballos",
-    asignatura: "Gestion Empresarial",
-    parcial: 5,
-    final: 0,
-    definitiva: 0
-  }
-];
+      {
+        cedula: "1080052573",
+        nombre: "AGUIRRE MENESES DAMARIS CAROLINA",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1060269256",
+        nombre: "ALVAREZ MEDINA MARIA CAMILA",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1138524487",
+        nombre: "CHAVES RESTREPO NICOLAS ANDRES",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1233191024",
+        nombre: "CUASTUMAL PORTILLA JENNY MIREYA",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1004190807",
+        nombre: "ENRIQUEZ USAMA DIANA MARCELA",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1193385914",
+        nombre: "ERAZO MERA NAHOMY CAROLINA",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1004190661",
+        nombre: "GRANJA VIZCAINO ANGELA GISEL",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1193033103",
+        nombre: "INGUILAN FUERTES ANGELA NAYELI",
+        asignatura: "Mercadeo",
+        parcial: 0,
+        final: null,
+        definitiva: null
+      },
+      {
+        cedula: "14675969",
+        nombre: "JOJOA DE LA CRUZ ARLEY ROLANDO",
+        asignatura: "Mercadeo",
+        parcial: 4.6,
+        final: 1.84,
+        definitiva: null
+      },
+      {
+        cedula: "1080691873",
+        nombre: "LOPEZ BENAVIDES DANIEL ESTEBAN",
+        asignatura: "Mercadeo",
+        parcial: 4,
+        final: 5,
+        definitiva: 4.6
+      },
+      {
+        cedula: "1085336096",
+        nombre: "LOPEZ ROSERO ERIKA FERNANDA",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "2675531",
+        nombre: "LUQUE  OVIEDO RAFAEL ELIGIO",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1193217556",
+        nombre: "MARIN ESLAVA MARIA  PAULA",
+        asignatura: "Mercadeo",
+        parcial: 0,
+        final: null,
+        definitiva: null
+      },
+      {
+        cedula: "1085280841",
+        nombre: "MARTINEZ ACHICANOY YURY  ANDREA",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "37081100",
+        nombre: "MAYA MORA JOHANA MILANED",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1085277514",
+        nombre: "MERCHANCANO MONTAÑO DIANA MARCELA",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1085325488",
+        nombre: "MONCAYO PADILLA MARIA JOSE",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1085262552",
+        nombre: "MORENO DIAZ  DAISSY PAOLA",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1080690652",
+        nombre: "NARVAEZ JOJOA JUAN DAVID",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "59814214",
+        nombre: "PEREZ IBARRA GLORIA CECILIA",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1085289873",
+        nombre: "PINCHAO CHAÑAG CHRISTIAN CAMILO",
+        asignatura: "Mercadeo",
+        parcial: 4.6,
+        final: 4.6,
+        definitiva: 4.6
+      },
+      {
+        cedula: "1085283899",
+        nombre: "PINTO PINTA SANDRA PATRICIA",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1085338657",
+        nombre: "RODRIGUEZ ORTEGA  LUISA FERNANDA",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1004233787",
+        nombre: "ROSERO  RODRIGUEZ JOHAN SEBASTIAN",
+        asignatura: "Mercadeo",
+        parcial: 0,
+        final: null,
+        definitiva: null
+      },
+      {
+        cedula: "1084220197",
+        nombre: "SACANAMBUY IMBAJOA JONATHAN OSWALDO",
+        asignatura: "Mercadeo",
+        parcial: 4.8,
+        final: 4.8,
+        definitiva: 4.8
+      },
+      {
+        cedula: "1081055111",
+        nombre: "TUPAZ MARTINEZ JEISSON ESTEBAN",
+        asignatura: "Mercadeo",
+        parcial: 0,
+        final: null,
+        definitiva: null
+      },
+      {
+        cedula: "1085321138",
+        nombre: "VIVAS PORTILLA MARIA FERNANDA",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "30745042",
+        nombre: "YANDUN JOSA  MYRIAN",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1085347131",
+        nombre: "ZAMBRANO HIDALGO KAREN ALEXANDRA",
+        asignatura: "Mercadeo",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1085320377",
+        nombre: "ARCINIEGAS MORENO DANIEL GUSTAVO",
+        asignatura: "Gestion Empresarial",
+        parcial: 4.8,
+        final: 5,
+        definitiva: 4.92
+      },
+      {
+        cedula: "1080050476",
+        nombre: "BERMUDES NARVAEZ YENIFER SUSANA",
+        asignatura: "Gestion Empresarial",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1006439687",
+        nombre: "CALDERON SOTO DARIO ANTONIO",
+        asignatura: "Gestion Empresarial",
+        parcial: 4.6,
+        final: 1.84,
+        definitiva: null
+      },
+      {
+        cedula: "1085914575",
+        nombre: "CHALPARTAR CUASAPUD DANIELA ALEJANDRA",
+        asignatura: "Gestion Empresarial",
+        parcial: 4.8,
+        final: 5,
+        definitiva: 4.92
+      },
+      {
+        cedula: "37085417",
+        nombre: "CHAMORRO CERON LUCILA",
+        asignatura: "Gestion Empresarial",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1080051355",
+        nombre: "CORDOBA ESTUPIÑAN DERECK SANTIAGO",
+        asignatura: "Gestion Empresarial",
+        parcial: 4.6,
+        final: 1.84,
+        definitiva: null
+      },
+      {
+        cedula: "1193029224",
+        nombre: "DEJOY REVELO JAIR ARLEY",
+        asignatura: "Gestion Empresarial",
+        parcial: 4.6,
+        final: 1.84,
+        definitiva: null
+      },
+      {
+        cedula: "1081272422",
+        nombre: "ERASO AREVALO  MARYORY HISBETH",
+        asignatura: "Gestion Empresarial",
+        parcial: 4.5,
+        final: 5,
+        definitiva: 4.8
+      },
+      {
+        cedula: "1080692228",
+        nombre: "GUERRERO ERASO  YERLY SOLANYI",
+        asignatura: "Gestion Empresarial",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1085289723",
+        nombre: "GUERRERO ORDOÑEZ SOFIA MILENA",
+        asignatura: "Gestion Empresarial",
+        parcial: 4.8,
+        final: 5,
+        definitiva: 4.92
+      },
+      {
+        cedula: "1085341877",
+        nombre: "MARTINEZ ORDIERES MATEO ALEJANDRO",
+        asignatura: "Gestion Empresarial",
+        parcial: 4.5,
+        final: 5,
+        definitiva: 4.8
+      },
+      {
+        cedula: "1107519640",
+        nombre: "MORENO MALLAMA MARIA CAMILA",
+        asignatura: "Gestion Empresarial",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "98381861",
+        nombre: "MUÑOZ CHAPAL FAVIANO",
+        asignatura: "Gestion Empresarial",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1193405811",
+        nombre: "NARVAEZ CEBALLOS DANIEL EDUARDO",
+        asignatura: "Gestion Empresarial",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1086332043",
+        nombre: "OJEDA SALAZAR  MARIA DE LOS ANGELES",
+        asignatura: "Gestion Empresarial",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      },
+      {
+        cedula: "1004191028",
+        nombre: "PAZ VERGARA VICKY MONICA",
+        asignatura: "Gestion Empresarial",
+        parcial: 4.8,
+        final: 5,
+        definitiva: 4.92
+      },
+      {
+        cedula: "1085276734",
+        nombre: "RAMOS CASANOVA KELLY FERNANDA",
+        asignatura: "Gestion Empresarial",
+        parcial: 4.8,
+        final: 1.92,
+        definitiva: null
+      },
+      {
+        cedula: "1004299392",
+        nombre: "VALLEJO ACHICANOY NATALIA KAROLINA",
+        asignatura: "Gestion Empresarial",
+        parcial: 5,
+        final: 5,
+        definitiva: 5
+      }
+    ];
+
+    // Helper para formatear valores nulos
+    const fmt = val => (val === null || val === undefined) ? '-' : val;
+
     // Buscar por cédula
     document.getElementById('buscar').addEventListener('click', () => {
       const cedula = document.getElementById('cedula').value.trim();
@@ -596,15 +534,15 @@
             <div class="grid grid-cols-3 gap-2 mt-2 text-center text-sm">
               <div class="bg-blue-50 p-2 rounded">
                 <div class="text-gray-600">Parcial</div>
-                <div class="font-bold">${asig.parcial}</div>
+                <div class="font-bold">${fmt(asig.parcial)}</div>
               </div>
               <div class="bg-green-50 p-2 rounded">
                 <div class="text-gray-600">Final</div>
-                <div class="font-bold">${asig.final}</div>
+                <div class="font-bold">${fmt(asig.final)}</div>
               </div>
               <div class="bg-purple-50 p-2 rounded">
                 <div class="text-gray-600">Definitiva</div>
-                <div class="font-bold text-purple-700">${asig.definitiva}</div>
+                <div class="font-bold text-purple-700">${fmt(asig.definitiva)}</div>
               </div>
             </div>
           </div>
@@ -655,7 +593,7 @@
         est.asignaturas.forEach(asig => {
           html += `
             <div class="text-xs bg-white p-1 rounded">
-              ${asig.asignatura}: P${asig.parcial} | F${asig.final} | Def: ${asig.definitiva}
+              ${asig.asignatura}: P${fmt(asig.parcial)} | F${fmt(asig.final)} | Def: ${fmt(asig.definitiva)}
             </div>
           `;
         });
@@ -664,7 +602,7 @@
       });
     });
 
-    // Permitir Enter
+    // Permitir tecla Enter
     document.getElementById('cedula').addEventListener('keypress', e => {
       if (e.key === 'Enter') document.getElementById('buscar').click();
     });
@@ -672,10 +610,9 @@
       if (e.key === 'Enter') document.getElementById('enter-teacher').click();
     });
 
-    // Evitar clic derecho y selección
+    // Evitar clic derecho y selección de texto
     document.addEventListener('contextmenu', e => e.preventDefault());
     document.addEventListener('selectstart', e => e.preventDefault());
   </script>
 </body>
 </html>
-
